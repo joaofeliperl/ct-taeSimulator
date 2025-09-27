@@ -1,62 +1,75 @@
 [
-{"id":"TAE-3.1-Q01","points":1,"kLevel":"K2","syllabus":"3.1","tags":["objetivos"],
-"stem":"Qual objetivo da arquitetura de automação de testes (TAA)?",
-"options":[
-{"id":"A","text":"Prover base reutilizável e escalável para automatização","correct": true},
-{"id":"B","text":"Substituir o planejamento de testes","correct": false},
-{"id":"C","text":"Impedir testes manuais","correct": false},
-{"id":"D","text":"Garantir 100% de cobertura","correct": false}
-],
-"explanation":"TAA sustenta automação com reuso, mantabilidade e escalabilidade."
+{
+"explanation":"Keywords abstraem passos reutilizáveis consumidos pelos scripts de alto nível."
 },
-{"id":"TAE-3.1-Q02","points":1,"kLevel":"K1","syllabus":"3.1","tags":["papéis"],
-"stem":"Quem tipicamente define padrões e camadas na TAA?",
+{"id":"TAE-3.2-Q06","points":1,"kLevel":"K2","syllabus":"3.2","tags":["manutenibilidade"],
+"stem":"Trocar a biblioteca WebDriver por outra deve afetar qual camada?",
 "options":[
-{"id":"A","text":"Arquiteto/Engenheiro de Testes","correct": true},
-{"id":"B","text":"Usuário final","correct": false},
-{"id":"C","text":"Equipe financeira","correct": false},
-{"id":"D","text":"Designer gráfico","correct": false}
+{"id":"A","text":"Apenas a camada de adaptadores/driver","correct": true},
+{"id":"B","text":"Todas as camadas","correct": false},
+{"id":"C","text":"Camada de lógica de teste","correct": false},
+{"id":"D","text":"Camada de dados de teste","correct": false}
 ],
-"explanation":"Papel técnico com foco em arquitetura/qualidade de testes."
+"explanation":"O objetivo da TAA é isolar mudanças de ferramenta na borda (drivers)."
 },
-{"id":"TAE-3.1-Q03","points":1,"kLevel":"K2","syllabus":"3.1","tags":["qualidades"],
-"stem":"Qual qualidade NÃO é diretamente um objetivo da TAA?",
+{"id":"TAE-3.2-Q07","points":1,"kLevel":"K1","syllabus":"3.2","tags":["conceito"],
+"stem":"O que melhor descreve 'abstração' na TAA?",
 "options":[
-{"id":"A","text":"Aumentar interoperabilidade e reuso","correct": false},
-{"id":"B","text":"Melhorar mantabilidade","correct": false},
-{"id":"C","text":"Garantir lucro trimestral","correct": true},
-{"id":"D","text":"Possibilitar paralelismo","correct": false}
+{"id":"A","text":"Ocultar detalhes de implementação expondo interfaces mais simples","correct": true},
+{"id":"B","text":"Medir performance de testes","correct": false},
+{"id":"C","text":"Catalogar defeitos","correct": false},
+{"id":"D","text":"Configurar pipelines de CI","correct": false}
 ],
-"explanation":"Lucro é consequência organizacional, não requisito técnico da TAA."
+"explanation":"Abstração reduz acoplamento e facilita reuso."
 },
-{"id":"TAE-3.1-Q04","points":1,"kLevel":"K2","syllabus":"3.1","tags":["stakeholders"],
-"stem":"Qual insumo é relevante para decisões da TAA?",
+{"id":"TAE-3.2-Q08","points":1,"kLevel":"K2","syllabus":"3.2","tags":["decisões"],
+"stem":"Qual decisão de arquitetura impacta diretamente paralelismo e escalabilidade?",
 "options":[
-{"id":"A","text":"Restrições de ambiente/infra de CI","correct": true},
-{"id":"B","text":"Tema do PowerPoint","correct": false},
-{"id":"C","text":"Preferência de cor da equipe","correct": false},
-{"id":"D","text":"Número de salas de reunião","correct": false}
+{"id":"A","text":"Suporte a execução distribuída (grid/containers)","correct": true},
+{"id":"B","text":"Formato de data no relatório","correct": false},
+{"id":"C","text":"Cor do tema da UI","correct": false},
+{"id":"D","text":"Número de asserts por teste","correct": false}
 ],
-"explanation":"Ambiente, orçamento e skills orientam as escolhas arquiteturais."
+"explanation":"Execução distribuída e isolamento de sessions habilitam paralelismo."
 },
-{"id":"TAE-3.1-Q05","points":1,"kLevel":"K2","syllabus":"3.1","tags":["riscos"],
-"stem":"Risco comum ao acoplar scripts a uma ferramenta específica?",
+{"id":"TAE-3.2-Q09","points":1,"kLevel":"K2","syllabus":"3.2","tags":["ferramentas"],
+"stem":"Qual critério é mais relevante ao escolher a ferramenta de execução?",
 "options":[
-{"id":"A","text":"Custo alto de migração ao trocar de ferramenta","correct": true},
-{"id":"B","text":"Renderização lenta de slides","correct": false},
-{"id":"C","text":"Aumento de FPS em jogos","correct": false},
-{"id":"D","text":"Menos testes exploratórios","correct": false}
+{"id":"A","text":"Compatibilidade com a camada de adaptadores existente","correct": true},
+{"id":"B","text":"Quantidade de estrelas no repositório","correct": false},
+{"id":"C","text":"Idioma do autor","correct": false},
+{"id":"D","text":"Tamanho do logo","correct": false}
 ],
-"explanation":"Acoplamento dificulta evolução e troca de stack."
+"explanation":"Integração suave com adaptadores e APIs minimiza retrabalho."
 },
-{"id":"TAE-3.1-Q06","points":1,"kLevel":"K2","syllabus":"3.1","tags":["governança"],
-"stem":"Como a TAA ajuda na governança da automação?",
+{"id":"TAE-3.2-Q10","points":1,"kLevel":"K2","syllabus":"3.2","tags":["dados"],
+"stem":"Em data-driven testing, onde ficam as variações de entrada?",
 "options":[
-{"id":"A","text":"Padronizando camadas, interfaces e práticas","correct": true},
-{"id":"B","text":"Desabilitando o planejamento de releases","correct": false},
-{"id":"C","text":"Substituindo revisões de código","correct": false},
-{"id":"D","text":"Eliminando testes manuais","correct": false}
+{"id":"A","text":"Em artefatos de dados externos (CSV/JSON/planilha)","correct": true},
+{"id":"B","text":"Codificadas dentro do executor","correct": false},
+{"id":"C","text":"Somente no relatório de execução","correct": false},
+{"id":"D","text":"No sistema sob teste","correct": false}
 ],
-"explanation":"Padrões e camadas organizam o crescimento sustentável do portfólio de testes."
+"explanation":"Separar dados permite escalar variações sem reescrever o caso."
+},
+{"id":"TAE-3.2-Q11","points":1,"kLevel":"K2","syllabus":"3.2","tags":["rastreamento"],
+"stem":"Como manter rastreabilidade entre casos abstratos e passos concretos?",
+"options":[
+{"id":"A","text":"Mapeando keywords/serviços para IDs de requisitos/testes","correct": true},
+{"id":"B","text":"Trocando o nome do repositório","correct": false},
+{"id":"C","text":"Removendo comentários","correct": false},
+{"id":"D","text":"Usando apenas prints","correct": false}
+],
+"explanation":"IDs e mapeamentos claros mantém o elo entre níveis."
+},
+{"id":"TAE-3.2-Q12","points":1,"kLevel":"K3","syllabus":"3.2","tags":["design"],
+"stem":"Dado um SUT com UI Web e API, qual desenho favorece manutenção?",
+"options":[
+{"id":"A","text":"Camada de serviços comum + adaptador Web + adaptador API","correct": true},
+{"id":"B","text":"Scripts de teste chamando WebDriver diretamente","correct": false},
+{"id":"C","text":"Dados de teste codificados em strings no script","correct": false},
+{"id":"D","text":"Relatório escrevendo no banco de dados do SUT","correct": false}
+],
+"explanation":"Serviços comuns + adaptadores específicos reduzem duplicação e acoplamento."
 }
 ]

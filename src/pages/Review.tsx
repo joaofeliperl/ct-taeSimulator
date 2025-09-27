@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BANKS } from '../data'
 import type { Question } from '../utils/scoring'
 
 export default function Review() {
@@ -7,13 +8,13 @@ export default function Review() {
   const [answers, setAnswers] = useState<Record<string,string>>({})
   const [syllabus, setSyllabus] = useState('')
 
-  useEffect(() => {
-    if (!raw) return
-    const r = JSON.parse(raw)
-    setAnswers(r.answers)
-    setSyllabus(r.syllabus)
-    import(`../data/tae-${r.syllabus}.json`).then(mod => setBank(mod.default))
-  }, [raw])
+ useEffect(() => {
+  if (!raw) return
+  const r = JSON.parse(raw)
+  setAnswers(r.answers)
+  setSyllabus(r.syllabus)
+  setBank((BANKS[r.syllabus] as Question[]) ?? [])
+}, [raw])
 
   if (!raw) return <div className="page">Sem dados</div>
 

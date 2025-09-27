@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import { shuffle } from '../utils/shuffle'
 import { score } from '../utils/scoring'
 import type { Question } from '../utils/scoring'
+import { BANKS } from '../data'
 import QuestionCard from '../components/QuestionCard'
 import Timer from '../components/Timer'
 import ProgressBar from '../components/ProgressBar'
@@ -23,26 +24,17 @@ export default function Quiz() {
   const [current, setCurrent] = useState<string | null>(null)
   const orderRef = useRef<string[]>([])
 
-  // carrega banco e inicializa a sessão
+  // carrega banco e inicializa a sessão (import estático)
   useEffect(() => {
     start(seed, m * 60)
-    let cancelled = false
-
-    import(`../data/tae-${syllabus}.json`)
-      .then(mod => {
-        if (cancelled) return
-        const all: Question[] = mod.default ?? []
-        const chosen = shuffle(all, seed).slice(0, n).map(q => ({
-          ...q,
-          options: shuffle(q.options, seed + q.id)
-        }))
-        setBank(chosen)
-        orderRef.current = chosen.map(q => q.id)
-        setCurrent(chosen[0]?.id ?? null)
-      })
-      .catch(() => setBank([]))
-
-    return () => { cancelled = true }
+    const all = (BANKS[syllabus] as Question[]) ?? []
+    const chosen = shuffle(all, seed).slice(0, n).map(q => ({
+      ...q,
+      options: shuffle(q.options, seed + q.id),
+    }))
+    setBank(chosen)
+    orderRef.current = chosen.map(q => q.id)
+    setCurrent(chosen[0]?.id ?? null)
   }, [seed, syllabus, n, m, start])
 
   const done = useMemo(() => bank.length > 0 && bank.every(q => answers[q.id]), [bank, answers])
@@ -53,7 +45,7 @@ export default function Quiz() {
     const payload = {
       s,
       total: bank.reduce((a, b) => a + (b.points ?? 1), 0),
-      seed, syllabus, n, m, at: Date.now(), answers
+      seed, syllabus, n, m, at: Date.now(), answers,
     }
     sessionStorage.setItem('lastResult', JSON.stringify(payload))
     nav('/results')
