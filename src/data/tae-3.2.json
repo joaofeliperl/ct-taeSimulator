@@ -1,0 +1,62 @@
+[
+{"id":"TAE-3.1-Q01","points":1,"kLevel":"K2","syllabus":"3.1","tags":["objetivos"],
+"stem":"Qual objetivo da arquitetura de automação de testes (TAA)?",
+"options":[
+{"id":"A","text":"Prover base reutilizável e escalável para automatização","correct": true},
+{"id":"B","text":"Substituir o planejamento de testes","correct": false},
+{"id":"C","text":"Impedir testes manuais","correct": false},
+{"id":"D","text":"Garantir 100% de cobertura","correct": false}
+],
+"explanation":"TAA sustenta automação com reuso, mantabilidade e escalabilidade."
+},
+{"id":"TAE-3.1-Q02","points":1,"kLevel":"K1","syllabus":"3.1","tags":["papéis"],
+"stem":"Quem tipicamente define padrões e camadas na TAA?",
+"options":[
+{"id":"A","text":"Arquiteto/Engenheiro de Testes","correct": true},
+{"id":"B","text":"Usuário final","correct": false},
+{"id":"C","text":"Equipe financeira","correct": false},
+{"id":"D","text":"Designer gráfico","correct": false}
+],
+"explanation":"Papel técnico com foco em arquitetura/qualidade de testes."
+},
+{"id":"TAE-3.1-Q03","points":1,"kLevel":"K2","syllabus":"3.1","tags":["qualidades"],
+"stem":"Qual qualidade NÃO é diretamente um objetivo da TAA?",
+"options":[
+{"id":"A","text":"Aumentar interoperabilidade e reuso","correct": false},
+{"id":"B","text":"Melhorar mantabilidade","correct": false},
+{"id":"C","text":"Garantir lucro trimestral","correct": true},
+{"id":"D","text":"Possibilitar paralelismo","correct": false}
+],
+"explanation":"Lucro é consequência organizacional, não requisito técnico da TAA."
+},
+{"id":"TAE-3.1-Q04","points":1,"kLevel":"K2","syllabus":"3.1","tags":["stakeholders"],
+"stem":"Qual insumo é relevante para decisões da TAA?",
+"options":[
+{"id":"A","text":"Restrições de ambiente/infra de CI","correct": true},
+{"id":"B","text":"Tema do PowerPoint","correct": false},
+{"id":"C","text":"Preferência de cor da equipe","correct": false},
+{"id":"D","text":"Número de salas de reunião","correct": false}
+],
+"explanation":"Ambiente, orçamento e skills orientam as escolhas arquiteturais."
+},
+{"id":"TAE-3.1-Q05","points":1,"kLevel":"K2","syllabus":"3.1","tags":["riscos"],
+"stem":"Risco comum ao acoplar scripts a uma ferramenta específica?",
+"options":[
+{"id":"A","text":"Custo alto de migração ao trocar de ferramenta","correct": true},
+{"id":"B","text":"Renderização lenta de slides","correct": false},
+{"id":"C","text":"Aumento de FPS em jogos","correct": false},
+{"id":"D","text":"Menos testes exploratórios","correct": false}
+],
+"explanation":"Acoplamento dificulta evolução e troca de stack."
+},
+{"id":"TAE-3.1-Q06","points":1,"kLevel":"K2","syllabus":"3.1","tags":["governança"],
+"stem":"Como a TAA ajuda na governança da automação?",
+"options":[
+{"id":"A","text":"Padronizando camadas, interfaces e práticas","correct": true},
+{"id":"B","text":"Desabilitando o planejamento de releases","correct": false},
+{"id":"C","text":"Substituindo revisões de código","correct": false},
+{"id":"D","text":"Eliminando testes manuais","correct": false}
+],
+"explanation":"Padrões e camadas organizam o crescimento sustentável do portfólio de testes."
+}
+]

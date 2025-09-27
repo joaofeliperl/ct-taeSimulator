@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CT-TAE Simulados</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        const redirect = sessionStorage.redirect;
+        if (redirect) {
+          delete sessionStorage.redirect;
+          const u = new URL(redirect, window.location.origin);
+          if (u.pathname !== window.location.pathname || u.search !== window.location.search || u.hash !== window.location.hash) {
+            history.replaceState(null, '', redirect);
+          }
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
